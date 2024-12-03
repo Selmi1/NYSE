@@ -1,0 +1,17 @@
+ Top 5 Stocks by Average Closing Price
+SELECT stock_symbol, AVG(closing_price) AS avg_price
+FROM nyse_data
+GROUP BY stock_symbol
+ORDER BY avg_price DESC
+LIMIT 5;
+
+-- Average Trading Volume by Sector
+SELECT sector, AVG(trading_volume) AS avg_volume
+FROM nyse_data
+GROUP BY sector;
+
+-- Daily Price Trends for a Specific Stock
+SELECT date, opening_price, closing_price
+FROM nyse_data
+WHERE stock_symbol = 'AAPL'
+ORDER BY date;
